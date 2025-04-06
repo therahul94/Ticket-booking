@@ -85,6 +85,7 @@ const TicketBooking = () => {
       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/booking/resetAllBookings`);
       setResetLoading(false);
       allSeatsStatusFn();
+      setConfirmBookedSeats([]);
       showToast(res.data.message, 'success');
     } catch (e) {
       setResetLoading(false);
